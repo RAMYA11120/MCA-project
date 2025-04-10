@@ -16,10 +16,19 @@ import DonarList from "./pages/Admin/DonarList";
 import HospitalList from "./pages/Admin/HospitalList";
 import OrgList from "./pages/Admin/OrgList";
 import AdminHome from "./pages/Admin/AdminHome";
+import DonationHistory from "./pages/Admin/History";
+
+import RequestForm from "./pages/Request/Request";
+import RequestAdminDashboard from "./pages/Request/Requestlist";
+import CampaignCard from "./pages/campign/CampignView";
+import CampaignForm from "./pages/campign/CreateNewcampign";
+import MyCampaigns from "./pages/campign/mycampign";
+import CampaignList from "./pages/campign/Campignlist";
 function App() {
   return (
     <>
       <ToastContainer />
+
       <Routes>
         <Route
           path="/admin"
@@ -126,7 +135,86 @@ function App() {
             </PublicRoute>
           }
         />
+        <Route
+          path="/histoy"
+          element={
+
+            // <Register />
+            <DonationHistory />
+
+          }
+        />
+
+        <Route
+          path="/recipient"
+          element={
+            <ProtectedRoute>
+
+            </ProtectedRoute>
+          }
+        />
+
+
+        <Route
+          path="/request"
+          element={
+            <ProtectedRoute>
+              <RequestForm />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/Requestlist"
+          element={
+            <ProtectedRoute>
+              <RequestAdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/allCampigns"
+          element={
+            <ProtectedRoute>
+              <CampaignCard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/createCampigns"
+          element={
+            <ProtectedRoute>
+              <CampaignForm />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-campaigns"
+          element={
+            <ProtectedRoute>
+              <MyCampaigns />
+            </ProtectedRoute>
+          }
+        />
+
+<Route
+          path="/campaignList"
+          element={
+            <ProtectedRoute>
+              <CampaignList />
+            </ProtectedRoute> 
+          }
+        />
+
+
+
       </Routes>
+
+
+
+
     </>
   );
 }

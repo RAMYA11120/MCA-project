@@ -1,0 +1,25 @@
+.beat-icon {
+    animation: beat 1s infinite;
+    transition: transform 0.3s;
+  }
+  
+  .phone-icon {
+    color: #007bff; /* Blue for phone */
+  }
+  
+  .whatsapp-icon {
+    color: #25d366; /* WhatsApp green */
+  }
+  .email-icon {
+    color: #ff5722; /* Orange */
+  }
+  
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+  

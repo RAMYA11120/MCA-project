@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const inventoryModel = require("../models/inventoryModel");
 const userModel = require("../models/userModel");
+const { sendBloodInventorytEmail } = require("../utils/email");
 
 // CREATE INVENTORY
 const createInventoryController = async (req, res) => {
@@ -76,6 +77,17 @@ const createInventoryController = async (req, res) => {
     //save record
     const inventory = new inventoryModel(req.body);
     await inventory.save();
+
+
+    const users=await userModel.find()
+    users.map(async (user)=>{
+
+      await  sendBloodInventorytEmail(user.email,inventory)
+
+    })
+
+
+
     return res.status(201).send({
       success: true,
       message: "New Blood Reocrd Added",
@@ -261,6 +273,26 @@ const getOrgnaisationForHospitalController = async (req, res) => {
   }
 };
 
+
+
+// In controllers/inventoryController.js
+const getDonationHistory = async (req, res) => {
+  try {
+    const donationHistory = await inventoryModel.find({ inventoryType: "in" })
+      .populate("donar", "name email") // optional, to show donor info
+      .populate("organisation", "name") // optional, to show org info
+      .sort({ createdAt: -1 }); // recent first
+
+      const his=donationHistory.filter(hi=>hi.email==req.params.id)
+
+    res.status(200).json(his);  
+  } catch (error) {
+    console.log(error);
+    
+    res.status(500).json({ message: "Error fetching donation history", error });
+  }
+};
+
 module.exports = {
   createInventoryController,
   getInventoryController,
@@ -270,4 +302,5 @@ module.exports = {
   getOrgnaisationForHospitalController,
   getInventoryHospitalController,
   getRecentInventoryController,
+  getDonationHistory
 };

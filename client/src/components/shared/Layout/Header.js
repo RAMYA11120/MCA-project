@@ -6,6 +6,9 @@ const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
+
+  localStorage.setItem("user",JSON.stringify(user))
+
   // logout handler
   const handleLogout = () => {
     localStorage.clear();

@@ -4,6 +4,7 @@ const colors = require("colors");
 const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
+const { getDonationHistory } = require("./controllers/inventoryController");
 //dot config
 dotenv.config();
 
@@ -25,6 +26,12 @@ app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
 app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
+app.use("/api/requests", require("./routes/Request.route"));
+app.use("/api/campaigns",require("./routes/Campign.Route"))
+// In routes/inventoryRoutes.js
+app.get("/donation-history/:id", getDonationHistory);
+
+
 
 //port
 const PORT = process.env.PORT || 8080;

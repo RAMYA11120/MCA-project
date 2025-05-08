@@ -109,14 +109,14 @@ const Sidebar = () => {
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/histoy">histoy</Link>
+                <Link to="/histoy">history</Link>
               </div>
               <div
                 className={`menu-item ${location.pathname === "/allCampigns" && "active"
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/allCampigns">View allCampigns</Link>
+                <Link to="/allCampigns">View allCampaigns</Link>
               </div>
 
               <div
@@ -124,7 +124,7 @@ const Sidebar = () => {
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/campaignlist">View allCampigns</Link>
+                <Link to="/campaignlist">View allCampaigns List</Link>
               </div>
             </>
           )}
@@ -158,7 +158,7 @@ const Sidebar = () => {
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/histoy">histoy</Link>
+                <Link to="/histoy">history</Link>
               </div>
 
               <div
@@ -173,14 +173,14 @@ const Sidebar = () => {
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/allCampigns">View allCampigns</Link>
+                <Link to="/allCampigns">View allCampaigns</Link>
               </div>
               <div
                 className={`menu-item ${location.pathname === "/allCampigns" && "active"
                   }`}
               >
                 <i className="fa-solid fa-hospital"></i>
-                <Link to="/createCampigns">Create Campigns</Link>
+                <Link to="/createCampigns">Create Campaigns</Link>
               </div>
 
               <div

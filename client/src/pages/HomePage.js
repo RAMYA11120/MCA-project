@@ -91,26 +91,26 @@ const HomePage = () => {
                   text: "It takes less than an hour to change a life.",
                   img: donar3,
                 },
-               {
-    title: "Quick Recovery",
-    text: "Your body replenishes the donated blood within days, keeping you healthy.",
-    img: donar4,
-  },
-  {
-    title: "Community Impact",
-    text: "Support your local hospitals and save lives in your neighborhood.",
-    img: donar5,
-  },
-  {
-    title: "Free Health Check",
-    text: "Each donation includes a mini health screening at no cost.",
-    img: donar6,
-  },
-  {
-    title: "Make a Habit",
-    text: "Regular donations can become a powerful habit of giving.",
-    img: donar7,
-  }
+                {
+                  title: "Quick Recovery",
+                  text: "Your body replenishes the donated blood within days, keeping you healthy.",
+                  img: donar4,
+                },
+                {
+                  title: "Community Impact",
+                  text: "Support your local hospitals and save lives in your neighborhood.",
+                  img: donar5,
+                },
+                {
+                  title: "Free Health Check",
+                  text: "Each donation includes a mini health screening at no cost.",
+                  img: donar6,
+                },
+                {
+                  title: "Make a Habit",
+                  text: "Regular donations can become a powerful habit of giving.",
+                  img: donar7,
+                }
               ].map((card, index) => (
                 <motion.div
                   className="col-md-4"

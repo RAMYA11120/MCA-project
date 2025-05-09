@@ -7,12 +7,16 @@ import "../../../styles/Layout.css";
 const Sidebar = () => {
   //GET USER STATE
   const { user } = useSelector((state) => state.auth);
+console.log(user?.role);
 
   const location = useLocation();
 
   return (
     <div>
-      <div className="sidebar">
+
+
+
+      <div className="sidebar" >
         <div className="menu">
           {user?.role === "organisation" && (
             <>

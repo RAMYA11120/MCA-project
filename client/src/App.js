@@ -24,6 +24,9 @@ import CampaignCard from "./pages/campign/CampignView";
 import CampaignForm from "./pages/campign/CreateNewcampign";
 import MyCampaigns from "./pages/campign/mycampign";
 import CampaignList from "./pages/campign/Campignlist";
+import EmergencyForm from "./pages/Emergency/emergencyForm";
+import EmergencyRequests from "./pages/Emergency/Adminemergencylist";
+import EmergencyRequestsDonar from "./pages/Emergency/donarviewEmergency";
 function App() {
   return (
     <>
@@ -199,15 +202,43 @@ function App() {
           }
         />
 
-<Route
+        <Route
           path="/campaignList"
           element={
             <ProtectedRoute>
               <CampaignList />
-            </ProtectedRoute> 
+            </ProtectedRoute>
           }
         />
 
+          <Route
+          path="/create-emergency-request"
+          element={
+            <ProtectedRoute>
+              <EmergencyForm />
+            </ProtectedRoute>
+          }
+        />
+
+             <Route
+          path="/emergency-requests"
+          element={
+            <ProtectedRoute>
+              <EmergencyRequests />
+            </ProtectedRoute>
+          }
+        />
+
+         <Route
+          path="/EmergencyRequestsDonar"
+          element={
+            <ProtectedRoute>
+              <EmergencyRequestsDonar />
+            </ProtectedRoute>
+          }
+        />
+
+{/*  */}
 
 
       </Routes>

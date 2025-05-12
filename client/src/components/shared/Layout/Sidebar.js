@@ -7,7 +7,7 @@ import "../../../styles/Layout.css";
 const Sidebar = () => {
   //GET USER STATE
   const { user } = useSelector((state) => state.auth);
-console.log(user?.role);
+  console.log(user?.role);
 
   const location = useLocation();
 
@@ -57,6 +57,16 @@ console.log(user?.role);
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/request">Request</Link>
               </div>
+              {/* ///create-emergency-request */}
+
+              <div
+                className={`menu-item ${location.pathname === "/create-emergency-request" && "active"
+                  }`}
+              >
+                <i className="fa-solid fa-hospital"></i>
+                <Link to="/create-emergency-request">create-emergency-request</Link>
+              </div>
+
               <div
                 className={`menu-item ${location.pathname === "/allCampigns" && "active"
                   }`}
@@ -130,6 +140,16 @@ console.log(user?.role);
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/campaignlist">View allCampaigns List</Link>
               </div>
+
+              <div
+                className={`menu-item ${location.pathname === "/emergency-requests" && "active"
+                  }`}
+              >
+                <i className="fa-solid fa-hospital"></i>
+                <Link to="/emergency-requests">Emergency-requests</Link>
+              </div>  
+
+              {/* /emergency-requests */}
             </>
           )}
 
@@ -171,6 +191,13 @@ console.log(user?.role);
               >
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/request">Request</Link>
+              </div>
+              <div
+                className={`menu-item ${location.pathname === "/create-emergency-request" && "active"
+                  }`}
+              >
+                <i className="fa-solid fa-hospital"></i>
+                <Link to="/create-emergency-request">create-emergency-request</Link>
               </div>
               <div
                 className={`menu-item ${location.pathname === "/allCampigns" && "active"
@@ -228,6 +255,14 @@ console.log(user?.role);
               >
                 <i className="fa-solid fa-hospital"></i>
                 <Link to="/allCampigns">View allCampigns</Link>
+              </div>
+
+              <div
+                className={`menu-item ${location.pathname === "/EmergencyRequestsDonar" && "active"
+                  }`}
+              >
+                <i className="fa-solid fa-hospital"></i>
+                <Link to="/EmergencyRequestsDonar">Emergency Requests Donar</Link>
               </div>
 
 

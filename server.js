@@ -33,8 +33,10 @@ app.use("/api/admin/dashboard",getAdminData)
 // In routes/inventoryRoutes.js
 app.get("/donation-history/:id", getDonationHistory);
 
+app.use("/api/emergency", require("./routes/emergencyRoutes"));
 
 
+//
 //port
 const PORT = process.env.PORT || 8080;
 

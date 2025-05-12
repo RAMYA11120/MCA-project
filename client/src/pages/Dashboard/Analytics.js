@@ -18,7 +18,10 @@ const Analytics = () => {
   const getBloodGroupData = async () => {
     try {
       const { data } = await API.get("/analytics/bloodGroups-data");
+      console.log(data);
+      
       if (data?.success) {
+
         setData(data?.bloodGroupData);
       }
     } catch (error) {
@@ -29,6 +32,7 @@ const Analytics = () => {
   const getBloodRecords = async () => {
     try {
       const { data } = await API.get("/inventory/get-recent-inventory");
+       console.log(data);
       if (data?.success) {
         setInventoryData(data?.inventory);
       }

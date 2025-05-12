@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const { getDonationHistory } = require("./controllers/inventoryController");
+const { getAdminData } = require("./controllers/adminController");
 //dot config
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
 app.use("/api/requests", require("./routes/Request.route"));
 app.use("/api/campaigns",require("./routes/Campign.Route"))
+app.use("/api/admin/dashboard",getAdminData)
 // In routes/inventoryRoutes.js
 app.get("/donation-history/:id", getDonationHistory);
 

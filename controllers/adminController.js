@@ -1,3 +1,6 @@
+const Campaign = require("../models/Campaign.model");
+const inventoryModel = require("../models/inventoryModel");
+const Request = require("../models/Request");
 const userModel = require("../models/userModel");
 
 //GET DONAR LIST
@@ -86,10 +89,42 @@ const deleteDonarController = async (req, res) => {
   }
 };
 
+
+//GET ORG LIST
+const getAdminData = async (req, res) => {
+  try {
+    const userdata = await userModel.find()
+    const campaign= await Campaign.find()
+    const inventory =await inventoryModel.find()
+    const request = await Request.find()
+
+    return res.status(200).send({
+      success: true,
+     userdata,
+     campaign,
+     inventory,
+     request
+
+
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "Error In ORG List API",
+      error,
+    });
+  }
+};
+
+
+
+
 //EXPORT
 module.exports = {
   getDonarsListController,
   getHospitalListController,
   getOrgListController,
   deleteDonarController,
+  getAdminData
 };

@@ -13,6 +13,8 @@ const router = express.Router();
 
 //Routes
 
+router.get("/")
+
 //GET || DONAR LIST
 router.get(
   "/donar-list",

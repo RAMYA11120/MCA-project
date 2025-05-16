@@ -82,7 +82,9 @@ const createInventoryController = async (req, res) => {
     const users=await userModel.find()
     users.map(async (user)=>{
 
-      await  sendBloodInventorytEmail(user.email,inventory)
+  
+        await  sendBloodInventorytEmail(user.email,inventory)
+    
 
     })
 
@@ -232,9 +234,7 @@ const getOrgnaisationController = async (req, res) => {
     const donar = req.body.userId;
     const orgId = await inventoryModel.distinct("organisation", { donar });
     //find org
-    const organisations = await userModel.find({
-      _id: { $in: orgId },
-    });
+    const organisations = await userModel.find();
     return res.status(200).send({
       success: true,
       message: "Org Data Fetched Successfully",
